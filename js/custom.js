@@ -15,8 +15,9 @@ $(document).ready(function () {
         $('a.page-scroll').bind('click', function (event) {
             var $anchor = $(this);
             $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
+                scrollTop: $($anchor.attr('href')).offset().top - document.getElementsByClassName('navbar')[0].offsetHeight
             }, 1500, 'easeInOutExpo');
+            console.log(document.getElementsByClassName('navbar')[0].offsetHeight);
             event.preventDefault();
         });
     });
@@ -25,7 +26,7 @@ $(document).ready(function () {
 
     $('body').scrollspy({
         target: '.navbar-fixed-top',
-        offset: 51
+        offset: document.getElementsByClassName('navbar')[0].offsetHeight
     });
 
     /***************** Owl Carousel ******************/
@@ -86,17 +87,31 @@ $(document).ready(function () {
     });
     /***************** Google Map ******************/
 
-    function initialize() {
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
-            center: new google.maps.LatLng(24.978745, 121.254415),
-            zoom: 18,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
+    function initMap() {
+        var concepoint = {lat: 24.978745, lng: 121.254415};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: concepoint
+        });
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+        var contentString = '<h4>康碁有限公司</h4>' +
+            '地址：桃園市中壢區忠孝路259號2樓';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: concepoint,
+            map: map,
+            title: 'Uluru (Ayers Rock)'
+        });
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+        infowindow.open(map, marker);
+    }
+    google.maps.event.addDomListener(window, 'load', initMap);
 
     /***************** Wow.js ******************/
     

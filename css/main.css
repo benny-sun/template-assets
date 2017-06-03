@@ -260,8 +260,8 @@ Navigation Style
 }
 
 .top-nav-collapse .navbar-brand img {
-    width: 52px;
-    height: 52px;
+    /*width: 52px;*/
+    /*height: 52px;*/
 }
 
 .top-nav-collapse .nav > li > a {
@@ -754,6 +754,7 @@ footer {
 }
 
 footer h1 {
+    font-size: 50px;
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -779,6 +780,7 @@ footer .social a:active {
 }
 
 footer h6 {
+    font-size: 16px;
     text-transform: uppercase;
     color: #fff;
 }
