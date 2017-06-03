@@ -26,7 +26,7 @@ $(document).ready(function () {
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
-    })
+    });
 
     /***************** Owl Carousel ******************/
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         paginationSpeed: 400,
         singleItem: true,
         transitionStyle: "fadeUp",
-        autoPlay: true,
+        autoPlay: false,
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 
     });
@@ -89,8 +89,8 @@ $(document).ready(function () {
     function initialize() {
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
-            center: new google.maps.LatLng(39.92757, -83.160207),
-            zoom: 8,
+            center: new google.maps.LatLng(24.978745, 121.254415),
+            zoom: 18,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
