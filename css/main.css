@@ -1,4 +1,3 @@
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);*/
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
 /* ==========================================================================
@@ -418,6 +417,7 @@ Services Style
 
 #services .services-box .col-md-4 {
     margin-bottom: 20px;
+    min-height: 16vh;
 }
 
 #services .services-box .col-md-4 .media-left,
@@ -446,6 +446,11 @@ Services Style
 #services .services-box .col-md-4 .media-body span {
     font-size: 36px;
     color: #fff;
+}
+
+#services .date {
+    top: 0;
+    position: absolute;
 }
 
 /* ==========================================================================
@@ -512,12 +517,12 @@ Portfolio Style
 
 #portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
 }
 
 #portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #portfolio .portfolio-box:hover .portfolio-box-caption {
@@ -549,6 +554,10 @@ Work Process Style
     font-size: 48px;
     color: #0d0d0d;
     margin-bottom: 15px;
+}
+
+#work-process img {
+    width: 48%;
 }
 
 /* ==========================================================================
@@ -639,7 +648,7 @@ Our Team Style
 Testimonials Style
 ========================================================================== */
 #testimonials {
-    background-image: url("../img/testimonials/Testimonials.jpg");
+    background-image: url("../img/testimonials/csc/Testimonials.jpg");
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
@@ -702,6 +711,10 @@ Testimonials Style
     transition: all 0.3s ease-in-out;
 }
 
+#testimonials .owl-wrapper-outer {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 /* ==========================================================================
 Contact Us Style
 ========================================================================== */
@@ -736,12 +749,38 @@ Contact Us Style
     resize: none;
 }
 
+#contact .address,
+#contact .tel,
+#contact .fax {
+    font-size: 22px;
+    color: #000;
+    font-weight: 400;
+}
+
+#contact .en {
+    font-size: 16px;
+}
+
+#contact .tel:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    content: "\f095";
+}
+
+#contact .fax:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    content: "\f1ac";
+}
+
 /* ==========================================================================
 Google Map Style
 ========================================================================== */
 #map {
     width: 100%;
-    height: 400px;
+    height: 320px;
 }
 
 /* ==========================================================================
@@ -891,5 +930,10 @@ Media Queries Style
 
     #testimonials h5 {
         font-size: 18px;
+    }
+
+    /*-- Work Process Style --*/
+    #work-process img {
+        width: 75%;
     }
 }

@@ -90,7 +90,7 @@ $(document).ready(function () {
     function initMap() {
         var concepoint = {lat: 24.978745, lng: 121.254415};
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16,
+            zoom: 15,
             center: concepoint
         });
 
