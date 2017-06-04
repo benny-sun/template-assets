@@ -17,7 +17,6 @@ $(document).ready(function () {
             $('html, body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top - document.getElementsByClassName('navbar')[0].offsetHeight
             }, 1500, 'easeInOutExpo');
-            console.log(document.getElementsByClassName('navbar')[0].offsetHeight);
             event.preventDefault();
         });
     });
@@ -38,7 +37,7 @@ $(document).ready(function () {
         paginationSpeed: 400,
         singleItem: true,
         transitionStyle: "fadeUp",
-        autoPlay: false,
+        autoPlay: true,
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 
     });
@@ -58,7 +57,7 @@ $(document).ready(function () {
     $("#owl-testi").owlCarousel({
 
         navigation: false, // Show next and prev buttons
-        paginationSpeed: 400,
+        paginationSpeed: 1400,
         singleItem: true,
         transitionStyle: "backSlide",
         autoPlay: true
@@ -87,31 +86,7 @@ $(document).ready(function () {
     });
     /***************** Google Map ******************/
 
-    function initMap() {
-        var concepoint = {lat: 24.978745, lng: 121.254415};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: concepoint
-        });
 
-        var contentString = '<h4>康碁有限公司</h4>' +
-            '地址：桃園市中壢區忠孝路259號2樓';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-            position: concepoint,
-            map: map,
-            title: 'Uluru (Ayers Rock)'
-        });
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-        infowindow.open(map, marker);
-    }
-    google.maps.event.addDomListener(window, 'load', initMap);
 
     /***************** Wow.js ******************/
     
@@ -123,4 +98,7 @@ $(document).ready(function () {
     $(window).load(function () {
         preloader.remove();
     });
-})
+
+    /***************** Share Button ******************/
+
+});

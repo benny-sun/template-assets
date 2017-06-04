@@ -1,5 +1,8 @@
-@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-
+/*@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);*/
+@font-face {
+    font-family: "cwTeXYen";
+    src: url("../fonts/cwTeXYen.ttf");
+}
 /* ==========================================================================
 Global Styles
 Fixed by Haogood
@@ -744,9 +747,14 @@ Contact Us Style
     min-height: 45px;
 }
 
+#contact input {
+    font-size: 18px;
+}
+
 #contact textarea {
     height: 140px;
     resize: none;
+    font-size: 18px;
 }
 
 #contact .address,
@@ -773,6 +781,10 @@ Contact Us Style
     font-style: normal;
     font-weight: normal;
     content: "\f1ac";
+}
+
+#contact select {
+    font-size: 20px;
 }
 
 /* ==========================================================================
@@ -935,5 +947,13 @@ Media Queries Style
     /*-- Work Process Style --*/
     #work-process img {
         width: 75%;
+    }
+
+    footer h1 {
+        font-size: 30px;
+    }
+
+    footer h6 {
+        font-size: 12px;
     }
 }
