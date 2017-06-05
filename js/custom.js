@@ -56,11 +56,14 @@ $(document).ready(function () {
 
     $("#owl-testi").owlCarousel({
 
-        navigation: false, // Show next and prev buttons
-        paginationSpeed: 1400,
+        slideSpeed: 1600,
+        paginationSpeed: 1000,
         singleItem: true,
-        transitionStyle: "backSlide",
-        autoPlay: true
+        autoPlay: true,
+        pagination: false,
+        navigation: true,
+        stopOnHover: true,
+        navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 
     });
     /***************** Countdown ******************/
@@ -86,7 +89,34 @@ $(document).ready(function () {
     });
     /***************** Google Map ******************/
 
+    function initialize() {
+        var concepoint = {lat: 24.978745, lng: 121.254415};
 
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+            center: concepoint,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var contentString = '<h4>康碁有限公司</h4>' +
+           '地址：桃園市中壢區忠孝路259號2樓';
+
+        var infowindow = new google.maps.InfoWindow({
+           content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+           position: concepoint,
+           map: map,
+           title: 'Hello World!'
+        });
+
+        infowindow.open(map, marker);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 
     /***************** Wow.js ******************/
     

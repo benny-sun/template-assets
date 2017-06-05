@@ -718,6 +718,51 @@ Testimonials Style
     background: rgba(0, 0, 0, 0.5);
 }
 
+/*--*/
+#testimonials .owl-buttons div {
+    background: #fff;
+    font-size: 24px;
+    color: #a3a3a3;
+    opacity: 1;
+}
+
+#testimonials .owl-buttons .owl-prev {
+    left: -60px;
+}
+
+#testimonials .owl-buttons .owl-next {
+    right: -60px;
+}
+
+#testimonials .owl-buttons .owl-prev,
+#testimonials .owl-buttons .owl-next {
+    opacity: 0;
+    position: absolute;
+    background: #fff;
+    top: 28%;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    z-index: 20;
+    text-align: center;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#testimonials:hover .owl-prev {
+    opacity: .9;
+    left: -5px;
+}
+
+#testimonials:hover .owl-next {
+    opacity: .9;
+    right: -5px;
+}
+
 /* ==========================================================================
 Contact Us Style
 ========================================================================== */
