@@ -428,7 +428,7 @@ Services Style
 
 #services .services-box .col-md-4 {
     margin-bottom: 20px;
-    min-height: 16vh;
+    min-height: 120px;
 }
 
 #services .services-box .col-md-4 .media-left,
@@ -474,6 +474,10 @@ Portfolio Style
 
 #portfolio h2 {
     text-transform: uppercase;
+}
+
+#portfolio h3 {
+    font-size: 20px;
 }
 
 #portfolio p {
@@ -538,6 +542,16 @@ Portfolio Style
 
 #portfolio .portfolio-box:hover .portfolio-box-caption {
     opacity: 1;
+}
+
+#portfolio .portfolio-logo {
+    position: absolute;
+    width: 100%;
+    bottom: 2em;
+}
+
+#portfolio .portfolio-logo img {
+    width: 140px;
 }
 
 /* ==========================================================================
@@ -671,13 +685,24 @@ Testimonials Style
     text-align: center;
 }
 
+#testimonials .container-fluid {
+    padding: 0;
+}
+
 #testimonials h2 {
     text-transform: uppercase;
     color: #fff;
 }
 
+#testimonials h3 {
+    color: #fff;
+}
+
 #testimonials p {
     color: #fff;
+    font-size: 24px;
+    padding-left: 10em;
+    padding-right: 10em;
 }
 
 #testimonials .item .quote {
@@ -699,6 +724,7 @@ Testimonials Style
 
 #testimonials .item h5 {
     color: #fff;
+    font-size: 34px;
     line-height: 36px;
 }
 
@@ -996,10 +1022,18 @@ Media Queries Style
     #testimonials h5 {
         font-size: 18px;
     }
+    
+    #testimonials p {
+        padding: 0
+    }
 
     /*-- Work Process Style --*/
     #work-process img {
         width: 75%;
+    }
+    
+    #work-process h4 {
+        font-size: 14px;
     }
 
     footer h1 {
