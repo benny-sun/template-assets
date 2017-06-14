@@ -400,8 +400,8 @@ Welcome Style
 #welcome img {
     margin-top: 40px;
     margin-bottom: 40px;
-    width: 180px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
 }
 
 /* ==========================================================================
@@ -1035,7 +1035,14 @@ Media Queries Style
     #work-process h4 {
         font-size: 14px;
     }
+    
+    /*-- Welcome Style --*/
+    #welcome img {
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
 
+    /*-- Footer Style --*/
     footer h1 {
         font-size: 30px;
     }
