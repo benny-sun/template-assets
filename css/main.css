@@ -773,11 +773,11 @@ Testimonials Style
     opacity: 0;
     position: absolute;
     background: #fff;
-    top: 28%;
+    top: calc(50% - 20px);
     height: 40px;
     width: 40px;
     line-height: 35px;
-    border-radius: 50%;
+    border-radius: 0;
     border: 1px solid #fff;
     z-index: 20;
     text-align: center;
@@ -916,7 +916,18 @@ footer h6 {
 }
 
 /* ==========================================================================
-Media Queries Style
+Media Queries Style (tablet)
+========================================================================== */
+@media screen and (min-width: 992px) and (max-width: 1366px) {
+    #testimonials p {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+
+/* ==========================================================================
+Media Queries Style (mobile)
 ========================================================================== */
 @media (max-width: 992px) {
     /*-- Navigation --*/

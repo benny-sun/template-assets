@@ -62,7 +62,7 @@ $(document).ready(function () {
         autoPlay: true,
         pagination: false,
         navigation: true,
-        stopOnHover: true,
+        autoplayHoverPause: true,
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 
     });
