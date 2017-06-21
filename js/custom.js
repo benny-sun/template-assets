@@ -62,7 +62,7 @@ $(document).ready(function () {
         autoPlay: true,
         pagination: false,
         navigation: true,
-        autoplayHoverPause: true,
+        stopOnHover: true,
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 
     });
@@ -128,7 +128,5 @@ $(document).ready(function () {
     $(window).load(function () {
         preloader.remove();
     });
-
-    /***************** Share Button ******************/
 
 });
