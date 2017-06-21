@@ -68,9 +68,7 @@
                     </div>
                     <div class="social-media hidden-sm hidden-xs">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a id="shareMenu"><i class="fa fa-share-alt"></i></a></li>
+                            <li><a class="shareMenu"><i class="fa fa-share-alt"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -524,9 +522,8 @@
         <div class="container">
             <h1>Concepoint</h1>
             <div class="social">
-                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fa fa-share-alt fa-2x"></i></a>
+                <a class="socialProfiles" data-toggle="tooltip" data-placement="bottom" title="康碁粉絲專業"><i class="fa fa-thumbs-o-up fa-2x"></i></a>
+                <a class="shareMenu" data-toggle="tooltip" data-placement="bottom" title="分享"><i class="fa fa-share-alt fa-2x"></i></a>
             </div>
             <h6>&copy; 2017 By Concepoint CO., LTD.</h6>
         </div>
@@ -552,22 +549,24 @@
     <script>
         $(document).ready(function () {
 
-            $('#shareMenu').socialShare({
+            /* -- 分享按鈕 -- */
+            $('.shareMenu').socialShare({
                 animation: 'chain',
-                social: 'facebook,twitter,google,linkedin,weibo',
+                social: 'facebook,twitter,google,weibo',
                 whenSelect: true,
-                selectContainer: '#shareMenu',
+                selectContainer: '.shareMenu',
                 blur: true
             });
 
-            $('#socialProfiles').socialProfiles({
+            $('.socialProfiles').socialProfiles({
                 animation: 'chain',
                 blur: true,
                 facebook: 'concepoint',
-                google: '102336483082058519992',
-                twitter: 'tolgaergin',
-                linkedin: 'tr.linkedin.com/in/tolgaergin'
+                google: '102128057892282803662',
+                twitter: 'concepoint'
             });
+
+            $('[data-toggle="tooltip"]').tooltip();
 
         });
     </script>

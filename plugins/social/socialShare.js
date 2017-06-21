@@ -27,6 +27,7 @@
             var firstSlide = document.getElementsByClassName("item")[0];
             var style = firstSlide.currentStyle || window.getComputedStyle(firstSlide, false);
             var img = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+            /* --*/
 
             var defaults = {
                 social: '',
