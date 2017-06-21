@@ -25,7 +25,8 @@
     <link href="plugins/Icons/et-line-font/style.css" rel="stylesheet">
     <link href="plugins/animate.css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/share/css/share.min.css">
+    <link href="plugins/social/arthref.css" rel="stylesheet">
+    <link href="plugins/social/normalize.css" rel="stylesheet">
     <!-- Icons Font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -69,12 +70,14 @@
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                            <li><a id="shareMenu"><i class="fa fa-share-alt"></i></a></li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </nav>
+
         <div id="owl-hero" class="owl-carousel owl-theme">
             <div class="item" style="background-image: url(img/sliders/orig/1.jpg)">
                 <div class="caption">
@@ -540,10 +543,41 @@
     <script src="plugins/inview/jquery.inview.min.js"></script>
     <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
     <script src="plugins/WOW/dist/wow.min.js"></script>
-    <script src="plugins/share/js/jquery.share.min.js"></script>
+    <script src="plugins/social/socialShare.min.js"></script>
+    <script src="plugins/social/socialProfiles.min.js"></script>
     <!-- GOOGLE MAP -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiIsWjRkxVcOW64dU0WjpVbu29ONRm2gQ"></script>
 
+
+    <script>
+        $(document).ready(function () {
+
+            $('#shareMenu').socialShare({
+                animation: 'chain',
+                social: 'facebook,twitter,google,linkedin,weibo',
+                whenSelect: true,
+                selectContainer: '#shareMenu',
+                blur: true
+            });
+
+            $('#socialProfiles').socialProfiles({
+                animation: 'chain',
+                blur: true,
+                facebook: 'concepoint',
+                google: '102336483082058519992',
+                twitter: 'tolgaergin',
+                pinterest: 'tolga',
+                dribbble: 'bbb',
+                behance: 'gokhun',
+                scoutzie: 'gokhun-guneyhan',
+                linkedin: 'tr.linkedin.com/in/tolgaergin'
+            });
+
+        });
+    </script>
+    <script>
+
+    </script>
 </body>
 
 </html>
