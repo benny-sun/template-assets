@@ -23,12 +23,17 @@
 
         socialShare: function(options) {
 
+            /* --Get first slide image */
+            var firstSlide = document.getElementsByClassName("item")[0];
+            var style = firstSlide.currentStyle || window.getComputedStyle(firstSlide, false);
+            var img = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
             var defaults = {
                 social: '',
                 title: document.title,
                 shareUrl: window.location.href,
                 description: $('meta[name="description"]').attr('content'),
-                picture: 'https://uploads.scratch.mit.edu/users/avatars/449/4251.png',
+                picture: img,
                 animation: 'launchpad', // launchpad, launchpadReverse, slideTop, slideRight, slideBottom, slideLeft, chain
                 chainAnimationSpeed: 100,
                 whenSelect: false,
@@ -36,8 +41,8 @@
                 blur: false
             };
 
+
             var options = $.extend(true,defaults, options);
-            console.log(options);
 
             var beforeDivs = '<div class="arthref arthrefSocialShare"><div class="overlay '+options.animation+'"><div class="icon-container"><div class="centered"><ul>';
             var afterDivs = '</ul></div></div></div></div>';
@@ -116,7 +121,7 @@
                     'twitter': { text: 'Twitter', className: 'aTwitter', url: 'http://twitter.com/home?status={t}%20{u}' },
                     'windows': { text: 'Windows', className: 'aWindows', url: 'http://profile.live.com/badge?url={u}' },
                     'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' },
-                    'weibo': { text: '微博', className: 'aYahoo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic=&ralateUid=&language=zh_cn' }
+                    'weibo': { text: '微博', className: 'aYahoo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic={p}&ralateUid=&language=zh_cn' }
                 };
 
                 var sites = options.social.split(',');
