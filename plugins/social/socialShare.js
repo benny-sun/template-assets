@@ -112,7 +112,7 @@
                     'digg': { text: 'Digg', className: 'aDigg', url: 'http://digg.com/submit?phase=2&amp;url={u}&amp;title={t}' },
                     'facebook': { text: 'Facebook', className: 'aFacebook', url: 'http://www.facebook.com/sharer.php?u={u}&amp;t={t}&amp;picture={p}' },
                     'friendfeed': { text: 'FriendFeed', className: 'aFriendFeed', url: 'http://friendfeed.com/share?url={u}&amp;title={t}' },
-                    'google': { text: 'Google+', className: 'aGooglePlus', url: 'https://plus.google.com/share?url={p}' },
+                    'google': { text: 'Google+', className: 'aGooglePlus', url: 'https://plus.google.com/share?url={u}' },
                     'linkedin': { text: 'LinkedIn', className: 'aLinkedIn', url: 'http://www.linkedin.com/shareArticle?mini=true&amp;url={u}&amp;title={t}&amp;ro=false&amp;summary={d}&amp;source=' },
                     'myspace': { text: 'MySpace', className: 'aMySpace', url: 'http://www.myspace.com/Modules/PostTo/Pages/?u={u}&amp;t={t}' },
                     'pinterest': { text: 'Pinterest', className: 'aPinterest', url: 'http://pinterest.com/pin/create/button/?url={u}&amp;description={d}' },
@@ -122,7 +122,8 @@
                     'twitter': { text: 'Twitter', className: 'aTwitter', url: 'http://twitter.com/home?status={t}%20{u}' },
                     'windows': { text: 'Windows', className: 'aWindows', url: 'http://profile.live.com/badge?url={u}' },
                     'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' },
-                    'weibo': { text: '微博', className: 'aYahoo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic={p}&ralateUid=&language=zh_cn' }
+                    'weibo': { text: '微博', className: 'aYahoo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic={p}&ralateUid=&language=zh_cn' },
+                    'qq': { text: 'QQ', className: 'aYahoo', url: 'http://connect.qq.com/widget/shareqq/index.html?url={u}&title={t}&source=&desc={d}&pics={p}'}
                 };
 
                 var sites = options.social.split(',');
