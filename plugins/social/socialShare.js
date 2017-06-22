@@ -123,7 +123,8 @@
                     'windows': { text: 'Windows', className: 'aWindows', url: 'http://profile.live.com/badge?url={u}' },
                     'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' },
                     'weibo': { text: '微博', className: 'aWeibo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic={p}&ralateUid=&language=zh_cn' },
-                    'qq': { text: 'QQ', className: 'aQQ', url: 'http://connect.qq.com/widget/shareqq/index.html?url={u}&title={t}&source=&desc={d}&pics={p}'}
+                    'qq': { text: 'QQ', className: 'aQQ', url: 'http://connect.qq.com/widget/shareqq/index.html?url={u}&title={t}&source=&desc={d}&pics={p}'},
+                    'line': { text: 'Line', className: 'aQQ', url: 'https://lineit.line.me/share/ui?url={u}'}
                 };
 
                 var sites = options.social.split(',');
