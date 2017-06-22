@@ -112,7 +112,7 @@
                     'digg': { text: 'Digg', className: 'aDigg', url: 'http://digg.com/submit?phase=2&amp;url={u}&amp;title={t}' },
                     'facebook': { text: 'Facebook', className: 'aFacebook', url: 'http://www.facebook.com/sharer.php?u={u}&amp;t={t}&amp;picture={p}' },
                     'friendfeed': { text: 'FriendFeed', className: 'aFriendFeed', url: 'http://friendfeed.com/share?url={u}&amp;title={t}' },
-                    'google': { text: 'Google+', className: 'aGooglePlus', url: 'https://plus.google.com/share?url={u}' },
+                    'google': { text: 'Google+', className: 'aGooglePlus', url: 'https://plus.google.com/share?url={p}' },
                     'linkedin': { text: 'LinkedIn', className: 'aLinkedIn', url: 'http://www.linkedin.com/shareArticle?mini=true&amp;url={u}&amp;title={t}&amp;ro=false&amp;summary={d}&amp;source=' },
                     'myspace': { text: 'MySpace', className: 'aMySpace', url: 'http://www.myspace.com/Modules/PostTo/Pages/?u={u}&amp;t={t}' },
                     'pinterest': { text: 'Pinterest', className: 'aPinterest', url: 'http://pinterest.com/pin/create/button/?url={u}&amp;description={d}' },
@@ -130,7 +130,7 @@
                 for (var i = 0; i <= sites.length-1; i++) {
                     siteSettings[ sites[i] ]['url'] = siteSettings[ sites[i] ]['url'].replace('{t}',encodeURIComponent(options.title)).replace('{u}',encodeURI(options.shareUrl)).replace('{d}',encodeURIComponent(options.description)).replace('{p}',encodeURIComponent(options.picture));
                     listItem += '<li><a href="'+siteSettings[ sites[i] ]['url'] +'" target="_blank" rel="nofollow" class="'+siteSettings[ sites[i] ]['className'] +'"><span></span></a><span>'+siteSettings[ sites[i] ]['text'] +'</span></li>';
-                };
+                }
 
                 $('body').append(beforeDivs+listItem+afterDivs);
             }
