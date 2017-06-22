@@ -29,6 +29,13 @@
             var img = style.backgroundImage.slice(4, -1).replace(/"/g, "");
             /* --*/
 
+            /* --Shared property*/
+            var property = '<meta property="og:title" content="'+document.title+'"/>'+
+                            '<meta property="og:description" content="'+$('meta[name="description"]').attr('content')+'"/>'+
+                            '<meta property="og:url" content="'+window.location.href+'"/>'+
+                            '<meta property="og:image" content="'+img+'"/>';
+            $('head').append(property);
+
             var defaults = {
                 social: '',
                 title: document.title,
