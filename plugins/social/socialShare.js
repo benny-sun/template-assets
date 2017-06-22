@@ -35,6 +35,7 @@
                             '<meta property="og:url" content="'+window.location.href+'"/>'+
                             '<meta property="og:image" content="'+img+'"/>';
             $('head').append(property);
+            /* --*/
 
             var defaults = {
                 social: '',
@@ -131,7 +132,8 @@
                     'yahoo': { text: 'Yahoo', className: 'aYahoo', url: 'http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u={u}&amp;t={t}' },
                     'weibo': { text: '微博', className: 'aWeibo', url: 'http://service.weibo.com/share/share.php?url={u}&appkey=&title={t}&pic={p}&ralateUid=&language=zh_cn' },
                     'qq': { text: 'QQ', className: 'aQQ', url: 'http://connect.qq.com/widget/shareqq/index.html?url={u}&title={t}&source=&desc={d}&pics={p}'},
-                    'line': { text: 'Line', className: 'aQQ', url: 'https://lineit.line.me/share/ui?url={u}'}
+                    'line': { text: 'Line', className: 'aLine', url: (isMobile()) ? 'line://msg/text/{u}' : 'https://lineit.line.me/share/ui?url={u}'},
+                    'wechat': { text: 'WeChat', className: 'aWechat', url: ''}
                 };
 
                 var sites = options.social.split(',');
@@ -142,6 +144,21 @@
                 }
 
                 $('body').append(beforeDivs+listItem+afterDivs);
+            }
+
+            function isMobile() {
+                if( navigator.userAgent.match(/Android/i)
+                    || navigator.userAgent.match(/webOS/i)
+                    || navigator.userAgent.match(/iPhone/i)
+                    || navigator.userAgent.match(/iPad/i)
+                    || navigator.userAgent.match(/iPod/i)
+                    || navigator.userAgent.match(/BlackBerry/i)
+                    || navigator.userAgent.match(/Windows Phone/i)
+                ){
+                    return true;
+                } else {
+                    return false;
+                }
             }
 
             function destroyContainer(o) {

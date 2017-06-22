@@ -54,7 +54,7 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	text-align: center;
+	text-align: left;
 	opacity: 0;
 	
 	-webkit-transition: all 200ms ease-in-out;
@@ -75,6 +75,7 @@
 	width: 80px;
 	height: 110px;
 	margin: 10px;
+	text-align: center;
 }
 .arthref .icon-container ul li a{
 	background-color: #617385;
@@ -149,6 +150,9 @@
 .arthref .icon-container ul li a.aWeibo span{ background-position: -320px -480px; }
 .arthref .icon-container ul li a.aQQ span{ background-position: -400px -480px; }
 
+.arthref .icon-container ul li a.aLine span{ background-position: 0px -560px; }
+.arthref .icon-container ul li a.aWechat span{ background-position: -80px -560px; }
+
 /* */
 .arthref .icon-container ul li a.aApple{ background-color: #272727; }
 .arthref .icon-container ul li a.aMySpace{ background-color: #272727; }
@@ -204,6 +208,9 @@
 .arthref .icon-container ul li a.aInstagram{ background-color: #723f2d; }
 .arthref .icon-container ul li a.aWeibo{ background-color: #B93A3A; }
 .arthref .icon-container ul li a.aQQ{ background-color: #3299DC; }
+
+.arthref .icon-container ul li a.aLine{ background-color: #00B900; }
+.arthref .icon-container ul li a.aWechat{ background-color: #2DC100; }
 
 
 .arthref .icon-container ul li a span{ display: block; width: 80px; height: 80px; background: url('../images/social-sprite.png') no-repeat; }
