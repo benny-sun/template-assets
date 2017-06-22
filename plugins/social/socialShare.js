@@ -77,8 +77,11 @@
                     setTimeout(function(){
                         $('.arthrefSocialShare').find('.overlay').addClass('active');
                         $('.arthrefSocialShare').find('ul').addClass('active');
+                        $('.arthrefSocialShare').find('ul').attr('id', 'shareIcons');
                         if(o.animation=='chain') chainAnimation($('.arthrefSocialShare').find('li'),o.chainAnimationSpeed,'1');
+                        setContainerWidth();    //set icon centered and left aligned
                     },0);
+
                 });
 
                 $( document ).on( "click touchstart", ".arthrefSocialShare .overlay", function( e ) {
@@ -159,6 +162,15 @@
                 } else {
                     return false;
                 }
+            }
+
+            /*  --Set icon centered and left aligned-- */
+            function setContainerWidth()
+            {
+                var windowWidth = $(document).width();
+                var blockWidth = $('ul.active li').outerWidth(true);
+                var maxBoxPerRow = Math.floor(windowWidth / blockWidth);
+                $('ul.active').width(maxBoxPerRow * blockWidth);
             }
 
             function destroyContainer(o) {
