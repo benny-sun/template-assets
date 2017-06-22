@@ -146,6 +146,8 @@
 .arthref .icon-container ul li a.aFlickr span{ background-position: -80px -480px; }
 .arthref .icon-container ul li a.aDribbble span, .arthref .icon-container ul li a.aDribble span{ background-position: -160px -480px; }
 .arthref .icon-container ul li a.aInstagram span{ background-position: -240px -480px; }
+.arthref .icon-container ul li a.aWeibo span{ background-position: -320px -480px; }
+.arthref .icon-container ul li a.aQQ span{ background-position: -400px -480px; }
 
 /* */
 .arthref .icon-container ul li a.aApple{ background-color: #272727; }
@@ -200,6 +202,9 @@
 .arthref .icon-container ul li a.aFlickr{ background-color: #ff0084; }
 .arthref .icon-container ul li a.aDribbble, .arthref .icon-container ul li a.aDribble{ background-color: #ff0084; }
 .arthref .icon-container ul li a.aInstagram{ background-color: #723f2d; }
+.arthref .icon-container ul li a.aWeibo{ background-color: #B93A3A; }
+.arthref .icon-container ul li a.aQQ{ background-color: #3299DC; }
+
 
 .arthref .icon-container ul li a span{ display: block; width: 80px; height: 80px; background: url('../images/social-sprite.png') no-repeat; }
 
