@@ -288,7 +288,6 @@
             }
 
             function destroyContainer(o, body, overlay, ulElement) {
-                console.log('destroy');
                 if(o.blur) body.children().removeClass('blurred');
                 overlay.removeClass('active');
                 ulElement.removeClass('active');
