@@ -72,24 +72,27 @@
 
                 obj.click(function() {
                     createContainer();
-                    if(o.blur) { $('.arthrefSocialShare').find('.overlay').addClass('opaque'); $('body').children().not('.arthref, script').addClass('blurred'); }
+                    if(o.blur) {
+                        $('.arthrefSocialShare').find('.overlay').addClass('opaque');
+                        $('body').children().not('.arthref, script').addClass('blurred');
+                    }
                     $('.arthrefSocialShare').find('.overlay').css('display','block');
                     setTimeout(function(){
+                        $(obj).css('pointer-events', 'none');
                         $('.arthrefSocialShare').find('.overlay').addClass('active');
                         $('.arthrefSocialShare').find('ul').addClass('active');
                         $('.arthrefSocialShare').find('ul').attr('id', 'shareIcons');
                         if(o.animation=='chain') chainAnimation($('.arthrefSocialShare').find('li'),o.chainAnimationSpeed,'1');
                         setContainerWidth();    //set icon centered and left aligned
                     },0);
-
                 });
 
                 $( document ).on( "click touchstart", ".arthrefSocialShare .overlay", function( e ) {
-                    destroyContainer(o);
+                    destroyContainer(o, obj);
                 });
 
                 $( document ).on( "keydown", function( e ) {
-                    if( e.keyCode == 27 ) destroyContainer(o);
+                    if( e.keyCode == 27 ) destroyContainer(o, obj);
                 });
 
                 $( document ).on( "click touchstart", ".arthrefSocialShare li", function( e ) {
@@ -107,7 +110,7 @@
                     return false;
                 }
                 return false;
-            };
+            }
 
             function chainAnimation(e,s,o) {
                 var $fade = $(e);
@@ -174,13 +177,14 @@
                 $('ul.active').width(maxBoxPerRow * blockWidth);
             }
 
-            function destroyContainer(o) {
+            function destroyContainer(o, obj) {
                 if(o.blur) $('body').children().removeClass('blurred');
                 $('.arthrefSocialShare').find('.overlay').removeClass('active');
                 $('.arthrefSocialShare').find('ul').removeClass('active');
                 setTimeout(function(){
                     $('.arthrefSocialShare').find('.overlay').css('display','none');
                     $('.arthrefSocialShare').remove();
+                    $(obj).css('pointer-events', '');
                 },300);
             }
 
