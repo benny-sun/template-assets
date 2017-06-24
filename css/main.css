@@ -262,16 +262,19 @@ Navigation Style
 }
 
 .top-nav-collapse .navbar-brand img {
-    /*width: 52px;*/
-    /*height: 52px;*/
+    width: 142px;
 }
 
 .top-nav-collapse .nav > li > a {
     padding: 30px 15px;
 }
 
+.navbar-brand {
+    padding: 25px 25px;
+}
+
 .navbar-brand > img {
-    width: 200px;
+    width: 150px;
 }
 
 /* ==========================================================================
