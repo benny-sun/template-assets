@@ -534,10 +534,11 @@
                 weibo: '5732374544'
             });
 
-            /* Reminding for buttons text  */
+            /* --Reminding for buttons text--  */
             $('[data-toggle="tooltip"]').tooltip();
 
-            $('.portfolio-box-caption').bind('touchstart touchend', function(e) {
+            /* --Hover effect for mobile-- */
+            $('.portfolio-box-caption').bind('touchstart touchend', function() {
                 $(this).toggleClass('toggleHoverEffect');
             });
 
