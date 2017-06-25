@@ -204,7 +204,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                     <a href="img/portfolio/csc/5.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
-                        <img src="img/portfolio/csc/6.jpg" class="img-responsive" alt="2">
+                        <img src="img/portfolio/csc/5.jpg" class="img-responsive" alt="2">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -494,6 +494,7 @@
                 <a class="shareMenu" data-toggle="tooltip" data-placement="bottom" title="分享"><i class="fa fa-share-alt fa-2x"></i></a>
             </div>
             <h6>&copy; 2017 Concepoint CO., LTD.</h6>
+            <h6>Powered by LiRi info</h6>
         </div>
     </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -535,6 +536,10 @@
 
             /* Reminding for buttons text  */
             $('[data-toggle="tooltip"]').tooltip();
+
+            $('.portfolio-box-caption').bind('touchstart touchend', function(e) {
+                $(this).toggleClass('toggleHoverEffect');
+            });
 
         });
     </script>
