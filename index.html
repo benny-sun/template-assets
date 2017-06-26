@@ -59,11 +59,11 @@
                 <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
                     <div class="col-md-8 col-xs-12 nav-wrap">
                         <ul class="nav navbar-nav">
-                            <li><a href="#owl-hero" class="page-scroll">Home</a></li>
-                            <li><a href="#portfolio" class="page-scroll">Works</a></li>
-                            <li><a href="#work-process" class="page-scroll">Services</a></li>
-                            <li><a href="#testimonials" class="page-scroll">About</a></li>
-                            <li><a href="#contact" class="page-scroll">Contact</a></li>
+                            <li><a href="#owl-hero" class="page-scroll">首頁</a></li>
+                            <li><a href="#portfolio" class="page-scroll">產品</a></li>
+                            <li><a href="#work-process" class="page-scroll">合作夥伴</a></li>
+                            <li><a href="#testimonials" class="page-scroll">關於康碁</a></li>
+                            <li><a href="#contact" class="page-scroll">聯絡我們</a></li>
                         </ul>
                     </div>
                     <div class="social-media hidden-sm hidden-xs">
@@ -541,6 +541,10 @@
             $('.portfolio-box-caption').bind('touchstart touchend', function() {
                 $(this).toggleClass('toggleHoverEffect');
             });
+
+            if ($(window).width() < 768) {
+                $('.page-scroll').attr('data-toggle', 'collapse').attr('data-target', '.navbar-collapse');
+            }
 
         });
     </script>

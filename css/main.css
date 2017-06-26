@@ -567,8 +567,8 @@ Work Process Style
     text-align: center;
 }
 
-#work-process .col-lg-3 {
-    margin-top: 40px;
+#work-process .col-lg-1 {
+    height: 115px;
 }
 
 #work-process h2 {

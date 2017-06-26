@@ -13,9 +13,17 @@ $(document).ready(function () {
 
     $(function () {
         $('a.page-scroll').bind('click', function (event) {
+
+            var navbarHeight = 0;
+            if ($(window).width() < 768) {
+                navbarHeight = $('.navbar-collapse').height();
+            }
+
             var $anchor = $(this);
             $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top - document.getElementsByClassName('navbar')[0].offsetHeight
+                scrollTop: $($anchor.attr('href')).offset().top
+                - document.getElementsByClassName('navbar')[0].offsetHeight
+                + navbarHeight
             }, 1500, 'easeInOutExpo');
             event.preventDefault();
         });
