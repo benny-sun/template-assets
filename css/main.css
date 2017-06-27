@@ -47,13 +47,13 @@ h2 {
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 24px;
     color: #000;
     font-weight: 400;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 18px;
     color: #000;
     font-weight: 400;
 }
@@ -395,10 +395,19 @@ Welcome Style
     font-weight: 700;
 }
 
+#welcome h2 b {
+    letter-spacing: 8px;
+    font-size: 40px;
+}
+
 #welcome .welcome-logo {
     margin: 20px 0 40px 10px;
     width: 180px;
     height: 150px;
+}
+
+#welcome .container {
+    width: 960px;
 }
 
 /* ==========================================================================
@@ -425,7 +434,6 @@ Services Style
 
 #services .services-box .col-md-4 {
     margin-bottom: 20px;
-    min-height: 120px;
 }
 
 #services .services-box .col-md-4 .media-left,
@@ -553,10 +561,6 @@ Portfolio Style
 
 #portfolio .portfolio-logo img {
     width: 140px;
-}
-
-#portfolio span {
-    color: red;
 }
 
 /* ==========================================================================
@@ -859,6 +863,7 @@ Contact Us Style
     font-style: normal;
     font-weight: normal;
     content: "\f095";
+    font-size: 24px;
 }
 
 #contact .fax:before {
@@ -866,6 +871,7 @@ Contact Us Style
     font-style: normal;
     font-weight: normal;
     content: "\f1ac";
+    font-size: 18px;
 }
 
 #contact select {
@@ -893,6 +899,8 @@ footer h1 {
     font-size: 50px;
     text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 0.6em;
+    text-indent: 0.6em;
 }
 
 footer .social {
@@ -918,6 +926,10 @@ footer .social a:active {
 footer h6 {
     font-size: 16px;
     color: #fff;
+}
+
+footer .text-right {
+    font-size: 12px;
 }
 
 footer img {
@@ -1003,6 +1015,10 @@ Media Queries Style (mobile)
         display: none !important;
     }
 
+    .navbar-fixed-top .navbar-collapse {
+        max-height: initial;
+    }
+
     .navbar-default .navbar-nav {
         float: none !important;
         margin-top: 7.5px;
@@ -1032,6 +1048,11 @@ Media Queries Style (mobile)
 
     #owl-hero .item .caption {
         padding-right: 10%;
+    }
+
+    /*-- Welcome --*/
+    #welcome .container {
+        width: initial;
     }
 
     /*-- Services --*/
@@ -1092,4 +1113,9 @@ Media Queries Style (mobile)
     footer img {
         width: 160px;
     }
+
+    footer .text-right {
+        text-align: center;
+    }
+
 }
