@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 28px;
     color: #000;
     font-weight: 400;
     letter-spacing: 0.05em;
@@ -379,6 +379,18 @@ Sliders Style
     right: -5px;
 }
 
+#owl-hero h2 {
+    font-size: 1.6em;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: initial;
+}
+
+#owl-hero h6 {
+    display: none;
+}
+
 /* ==========================================================================
 Welcome Style
 ========================================================================== */
@@ -709,9 +721,10 @@ Testimonials Style
 
 #testimonials p {
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     padding-left: 10em;
     padding-right: 10em;
+    line-height: 50px;
 }
 
 #testimonials .item .quote {
@@ -817,6 +830,12 @@ Contact Us Style
 
 #contact h2 {
     text-transform: uppercase;
+}
+
+#contact h4 {
+    font-size: 14px;
+    line-height: 0;
+    padding-bottom: 10px;
 }
 
 #contact form {
@@ -940,9 +959,24 @@ footer img {
 Media Queries Style (tablet)
 ========================================================================== */
 @media screen and (min-width: 992px) and (max-width: 1366px) {
+    
+    #owl-hero h1 {
+        font-size: 1.6em;
+    }
+    
+    #owl-hero h2 {
+        font-size: 1.4em;
+    }
+    
+    #owl-hero h6 {
+        font-size: 24px;
+    }
+    
     #testimonials p {
         padding-left: 1em;
         padding-right: 1em;
+        font-size: 16px;
+        line-height: 40px;
     }
 
     #welcome .container {
@@ -1033,9 +1067,12 @@ Media Queries Style (mobile)
     }
 
     /*-- Sliders --*/
-    #owl-hero h1,
-    #owl-hero h6 {
-        font-size: 16px;
+    #owl-hero h1 {
+        font-size: 1em;
+    }
+    
+    #owl-hero h2 {
+        font-size: 0.7em;
     }
 
     #owl-hero .btn {
