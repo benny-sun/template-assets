@@ -3,13 +3,15 @@ Global Styles
 Fixed by Haogood
 2017-06-03 16:42
 ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html, body {
     width: 100%;
     overflow-x: hidden;
 }
 
 body {
-    font-family: Arial, 'Microsoft JhengHei', sans-serif;
+    font-family: 'Open Sans', 'Microsoft JhengHei', sans-serif;
     font-size: 16px;
     color: #0d0d0d;
     overflow-x: hidden;
@@ -36,7 +38,7 @@ h1 {
     font-size: 55px;
     color: #fff;
     font-weight: 300;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
 }
 
 h2 {
@@ -74,7 +76,7 @@ h6 {
 p {
     font-size: 16px;
     color: #000;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* ==========================================================================
@@ -436,6 +438,10 @@ Services Style
     color: #fff;
 }
 
+#services h3 {
+    margin-bottom: 2px;
+}
+
 #services p {
     color: #fff;
 }
@@ -594,6 +600,7 @@ Work Process Style
 #work-process h4 {
     text-transform: uppercase;
     color: #0d0d0d;
+    font-size: 12px;
 }
 
 #work-process span {
@@ -722,8 +729,8 @@ Testimonials Style
 #testimonials p {
     color: #fff;
     font-size: 20px;
-    padding-left: 18em;
-    padding-right: 18em;
+    padding-left: 14em;
+    padding-right: 14em;
     line-height: 30px;
     text-align: left;
     font-weight: 300;
@@ -750,7 +757,8 @@ Testimonials Style
     color: #fff;
     font-size: 34px;
     line-height: 36px;
-    font-family: 'Arial';
+    font-family: 'Open Sans';
+    padding-bottom: 30px;
 }
 
 #testimonials .item h5 span {
@@ -1096,7 +1104,17 @@ Media Queries Style (mobile)
 
     /*-- Services --*/
     #services h3 {
-        font-size: 22px;
+        font-size: 20px;
+        margin-top: 6px;
+    }
+    
+    #services p {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    
+    #services .services-box .col-md-4 {
+        margin-bottom: 0;
     }
 
     /*-- section styles --*/
@@ -1106,20 +1124,18 @@ Media Queries Style (mobile)
     
     #testimonials .item h5 {
         font-size: 22px;
+        padding-bottom: 10px;
     }
 
     #testimonials p {
         padding: 0;
         font-size: 12px;
+        line-height: 18px;
     }
 
     /*-- Work Process Style --*/
     #work-process img {
         width: 75%;
-    }
-    
-    #work-process h4 {
-        font-size: 14px;
     }
     
     /*-- Welcome Style --*/
