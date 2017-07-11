@@ -722,9 +722,11 @@ Testimonials Style
 #testimonials p {
     color: #fff;
     font-size: 20px;
-    padding-left: 10em;
-    padding-right: 10em;
-    line-height: 50px;
+    padding-left: 18em;
+    padding-right: 18em;
+    line-height: 30px;
+    text-align: left;
+    font-weight: 300;
 }
 
 #testimonials .item .quote {
@@ -973,8 +975,8 @@ Media Queries Style (tablet)
     }
     
     #testimonials p {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 8em;
+        padding-right: 8em;
         font-size: 16px;
         line-height: 40px;
     }
@@ -1101,13 +1103,14 @@ Media Queries Style (mobile)
     section h2 {
         font-size: 32px;
     }
-
-    #testimonials h5 {
-        font-size: 18px;
-    }
     
+    #testimonials .item h5 {
+        font-size: 22px;
+    }
+
     #testimonials p {
-        padding: 0
+        padding: 0;
+        font-size: 12px;
     }
 
     /*-- Work Process Style --*/
