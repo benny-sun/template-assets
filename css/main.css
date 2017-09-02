@@ -907,6 +907,22 @@ Contact Us Style
     font-size: 20px;
 }
 
+#contact select {
+    cursor: pointer;
+    -webkit-appearance: none; /* for webkit browsers */
+    -moz-appearance: none; /* for firefox */
+    appearance: none; /* for modern browsers */
+}
+
+#contact select + i.fa {
+    float: right;
+    margin-top: -46px;
+    margin-right: 10px;
+    pointer-events: none;
+    padding-right: 5px;
+    font-size: 45px;
+}
+
 /* ==========================================================================
 Google Map Style
 ========================================================================== */
