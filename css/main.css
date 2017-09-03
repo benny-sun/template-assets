@@ -150,6 +150,7 @@ Buttons Styles
     letter-spacing: 0.05em;
     text-transform: uppercase;
     border: 3px solid #24242a;
+    cursor: pointer;
 }
 
 .btn-block:hover,

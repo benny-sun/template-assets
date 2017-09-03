@@ -441,27 +441,27 @@
             <h2>聯絡我們</h2>
             <hr class="sep">
             <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay=".3s">
-                <form>
+                <form id="form-contact-info">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Name" placeholder="Name">
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Email" placeholder="Email">
+                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <select class="form-control" id="Career">
-                            <option>職業</option>
-                            <option>設計師(公司)</option>
-                            <option>建築師(公司)</option>
-                            <option>承包廠商</option>
-                            <option>個人</option>
+                        <select class="form-control" id="Career" name="Career">
+                            <option value="0">職業</option>
+                            <option value="設計師(公司)">設計師(公司)</option>
+                            <option value="建築師(公司)">建築師(公司)</option>
+                            <option value="承包廠商">承包廠商</option>
+                            <option value="個人">個人</option>
                         </select>
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                        <textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
                     </div>
-                    <a href="#" class="btn-block">寄送</a>
+                    <a id="btn-send-mail" class="btn-block">寄送</a>
                 </form>
                 <address>
                     <div class="col-md-6 text-left">
@@ -546,6 +546,20 @@
             if ($(window).width() < 768) {
                 $('.page-scroll').attr('data-toggle', 'collapse').attr('data-target', '.navbar-collapse');
             }
+
+            document.getElementById("btn-send-mail").addEventListener("click", function() {
+                $.ajax({
+                    url: "mailer/process.php",
+                    data: $("#form-contact-info").serialize(),
+                    method: "POST",
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function (xhr, ajaxOption, error) {
+                        console.log(xhr, ajaxOption, error);
+                    }
+                });
+            });
 
         });
     </script>
