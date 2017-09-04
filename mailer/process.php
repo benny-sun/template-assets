@@ -16,19 +16,44 @@ $email = $_POST['Email'];
 $career = $_POST['Career'];
 $msg = $_POST['message'];
 $err_keys = ['name'];
-$error = [];
+$isError = false;
+$error_msg = [
+    'name' => '',
+    'email' => '',
+    'career' => '',
+    'msg' => ''
+];
 
 if ($name == '') {
-    array_push($error, '請輸入大名');
+    $error_msg['name'] = '請輸入您的稱呼';
 }
 
 if ($email == '') {
-    array_push($error, '請輸入聯絡方式');
+    $error_msg['email'] = '請輸入聯絡方式，Email或電話';
 }
 
-if ($career == '0') {
-    array_push($career, '請選擇職業');
+if ($career == '') {
+    $error_msg['career'] = '請選擇職業';
 }
+
+if ($msg == '') {
+    $error_msg['msg'] = '請輸入內容';
+}
+
+foreach ($error_msg as $value) {
+    if ($value !== '') {
+        $isError = true;
+    }
+}
+
+if ($isError) {
+    echo json_encode($error_msg);
+} else {
+    echo 'no error';
+}
+
+
+die(); //--------------------------------
 
 
 $mail = new PHPMailer(true);
@@ -62,7 +87,7 @@ try {
     $mail->Body    = '客戶職業：<b>'.$career.'</b><br>'.
         '聯絡方式：'.$email.'<br>'.
         '訊息內容：<p>'.$msg.'</p>';
-    $mail->AltBody = 'From concepoint.com '.date('Y-m-d H:i:s');
+    $mail->AltBody = 'From concepoint.com '.date('Y-m-d H:i:s');    //can see in plain text mode
 
     $mail->send();
     echo 'Message has been sent';

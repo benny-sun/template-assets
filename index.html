@@ -36,6 +36,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .error-msg {
+            float:left;
+            padding-left: 10px;
+            color: red;
+            font-size: 20px;
+        }
+
+        .error-border {
+            border: 2px solid #FF0000 !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -443,14 +456,14 @@
             <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay=".3s">
                 <form id="form-contact-info">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="稱呼">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Email">
+                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Email或電話">
                     </div>
                     <div class="form-group">
                         <select class="form-control" id="Career" name="Career">
-                            <option value="0">職業</option>
+                            <option value="">職業</option>
                             <option value="設計師(公司)">設計師(公司)</option>
                             <option value="建築師(公司)">建築師(公司)</option>
                             <option value="承包廠商">承包廠商</option>
@@ -459,7 +472,7 @@
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
+                        <textarea name="message" class="form-control" rows="3" placeholder="訊息"></textarea>
                     </div>
                     <a id="btn-send-mail" class="btn-block">寄送</a>
                 </form>
@@ -553,7 +566,15 @@
                     data: $("#form-contact-info").serialize(),
                     method: "POST",
                     success: function(response) {
-                        console.log(response);
+                        error = JSON.parse(response);
+                        if (error.name !== '') {
+                            $("<span class='error-msg'>"+error.name+"</span>").insertAfter( $("#Name") );
+                            console.log(error.name);
+                        } else {
+
+                        }
+
+
                     },
                     error: function (xhr, ajaxOption, error) {
                         console.log(xhr, ajaxOption, error);
