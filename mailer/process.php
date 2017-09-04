@@ -11,25 +11,42 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 
+$name = $_POST['Name'];
+$email = $_POST['Email'];
+$career = $_POST['Career'];
+$msg = $_POST['message'];
+$err_keys = ['name'];
+$error = [];
+
+if ($name == '') {
+    array_push($error, '請輸入大名');
+}
+
+if ($email == '') {
+    array_push($error, '請輸入聯絡方式');
+}
+
+if ($career == '0') {
+    array_push($career, '請選擇職業');
+}
+
+
 $mail = new PHPMailer(true);
 try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-//    $mail->Host = 'smtp.gmail.com';
-//    $mail->Username = 'xeriok90686@gmail.com';                 // SMTP username
-//    $mail->Password = 'daniel12369daniel12369';                           // SMTP password
-    $mail->Host = 'mail.lirii.net';  // Specify main and backup SMTP servers
+    $mail->Host = 'jp1.fcomet.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'haogood@lirii.net';                 // SMTP username
     $mail->Password = 'benny_sun1994';                           // SMTP password
-    $mail->SMTPSecure = false;                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 2525;                                    // TCP port to connect to
+    $mail->SMTPSecure = '';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 25;                                    // TCP port to connect to
 
     //Recipients
     $mail->setFrom('haogood@lirii.net', 'Mailer');
-    $mail->addAddress('ben831001@gmail.com', 'Joe User');     // Add a recipient
-    $mail->addAddress('u0224083@mis.nkfust.edu.tw');               // Name is optional
+    $mail->addAddress('ben831001@gmail.com', 'Eddie');     // Add a recipient
+    $mail->addAddress('u0224083@mis.nkfust.edu.tw', 'Chuang');               // Name is optional
 //    $mail->addReplyTo('info@example.com', 'Information');
 //    $mail->addCC('cc@example.com');
 //    $mail->addBCC('bcc@example.com');
@@ -40,9 +57,12 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    mb_internal_encoding('UTF-8');
+    $mail->Subject = mb_encode_mimeheader('康碁官網 客戶'.$name.'來信', 'UTF-8');
+    $mail->Body    = '客戶職業：<b>'.$career.'</b><br>'.
+        '聯絡方式：'.$email.'<br>'.
+        '訊息內容：<p>'.$msg.'</p>';
+    $mail->AltBody = 'From concepoint.com '.date('Y-m-d H:i:s');
 
     $mail->send();
     echo 'Message has been sent';
