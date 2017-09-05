@@ -48,18 +48,19 @@ foreach ($error_msg as $value) {
 
 if ($isError) {
     echo json_encode($error_msg);
+    die();
 } else {
     echo 'no error';
 }
 
+sleep(2);
 
-die(); //--------------------------------
-
+die(); //---------
 
 $mail = new PHPMailer(true);
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'jp1.fcomet.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -71,7 +72,7 @@ try {
     //Recipients
     $mail->setFrom('haogood@lirii.net', 'Mailer');
     $mail->addAddress('ben831001@gmail.com', 'Eddie');     // Add a recipient
-    $mail->addAddress('u0224083@mis.nkfust.edu.tw', 'Chuang');               // Name is optional
+    $mail->addAddress('u0224083@mis.nkfust.edu.tw', 'Support');               // Name is optional
 //    $mail->addReplyTo('info@example.com', 'Information');
 //    $mail->addCC('cc@example.com');
 //    $mail->addBCC('bcc@example.com');
@@ -90,8 +91,8 @@ try {
     $mail->AltBody = 'From concepoint.com '.date('Y-m-d H:i:s');    //can see in plain text mode
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'no error';
 } catch (Exception $e) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+//    echo 'Message could not be sent.';
+//    echo 'Mailer Error: ' . $mail->ErrorInfo;
 }

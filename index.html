@@ -47,6 +47,13 @@
         .error-border {
             border: 2px solid #FF0000 !important;
         }
+
+        a.disabled {
+            /*pointer-events: none;*/
+            cursor: not-allowed;
+            text-decoration: none;
+            opacity: .65;
+        }
     </style>
 
 </head>
@@ -472,7 +479,7 @@
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" class="form-control" rows="3" placeholder="訊息"></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="3" placeholder="訊息"></textarea>
                     </div>
                     <a id="btn-send-mail" class="btn-block">寄送</a>
                 </form>
@@ -566,15 +573,47 @@
                     data: $("#form-contact-info").serialize(),
                     method: "POST",
                     success: function(response) {
-                        error = JSON.parse(response);
-                        if (error.name !== '') {
-                            $("<span class='error-msg'>"+error.name+"</span>").insertAfter( $("#Name") );
-                            console.log(error.name);
+                        if (response !== 'no error') {
+                            error = JSON.parse(response);
+
+                            //Name validating
+                            if (error.name !== '' && $("#Name").next().length === 0) {
+                                $("#Name").addClass("error-border");
+                                $("<span class='error-msg'>"+error.name+"</span>").insertAfter( $("#Name") );
+                            } else if (error.name === '') {
+                                $("#Name").removeClass("error-border");
+                                $("#Name").next().remove();
+                            }
+
+                            //Contact validating - Email or Phone number
+                            if (error.email !== '' && $("#Email").next().length === 0) {
+                                $("#Email").addClass("error-border");
+                                $("<span class='error-msg'>"+error.email+"</span>").insertAfter( $("#Email") );
+                            } else if (error.email === '') {
+                                $("#Email").removeClass("error-border");
+                                $("#Email").next().remove();
+                            }
+
+                            //Career validating
+                            if (error.career !== '' && $("#Career").next().next().length === 0) {
+                                $("#Career").addClass("error-border");
+                                $("<span class='error-msg'>"+error.career+"</span>").insertAfter( $("#Career").next() );
+                            } else if (error.career === '') {
+                                $("#Career").removeClass("error-border");
+                                $("#Career").next().next().remove();
+                            }
+
+                            //Message validating - Email or Phone number
+                            if (error.msg !== '' && $("#message").next().length === 0) {
+                                $("#message").addClass("error-border");
+                                $("<span class='error-msg'>"+error.msg+"</span>").insertAfter( $("#message") );
+                            } else if (error.msg === '') {
+                                $("#message").removeClass("error-border");
+                                $("#message").next().remove();
+                            }
                         } else {
-
+                            console.log('Message has been sent');
                         }
-
-
                     },
                     error: function (xhr, ajaxOption, error) {
                         console.log(xhr, ajaxOption, error);
