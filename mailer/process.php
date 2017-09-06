@@ -27,7 +27,7 @@ $error_msg = [
 ];
 
 if ($name == '') {
-    $error_msg['name'] = '請填入您的稱呼，例如OOO先生/小姐';
+    $error_msg['name'] = '請填入您的姓名';
 }
 
 if ($email == '') {

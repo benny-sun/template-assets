@@ -132,7 +132,7 @@
             <hr class="sep">
             <div class="row">
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a class="portfolio-box" href="img/portfolio/csc/1.jpg" data-lightbox="image-1" data-title="Your caption">
+                    <a class="portfolio-box" href="img/portfolio/csc/1.jpg" data-lightbox="image-1">
                         <img src="img/portfolio/csc/1.jpg" class="img-responsive" alt="1">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -150,7 +150,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/csc/2.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption">
+                    <a href="img/portfolio/csc/2.jpg" class="portfolio-box" data-lightbox="image-4">
                         <img src="img/portfolio/csc/2.jpg" class="img-responsive" alt="4">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -168,7 +168,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/csc/3.jpg" class="portfolio-box" data-lightbox="image-5" data-title="Your caption">
+                    <a href="img/portfolio/csc/3.jpg" class="portfolio-box" data-lightbox="image-5">
                         <img src="img/portfolio/csc/3.jpg" class="img-responsive" alt="5">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -186,7 +186,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/csc/4.jpg" class="portfolio-box" data-lightbox="image-3" data-title="Your caption">
+                    <a href="img/portfolio/csc/4.jpg" class="portfolio-box" data-lightbox="image-3">
                         <img src="img/portfolio/csc/4.jpg" class="img-responsive" alt="3">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -204,7 +204,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/csc/5.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
+                    <a href="img/portfolio/csc/5.jpg" class="portfolio-box" data-lightbox="image-2">
                         <img src="img/portfolio/csc/5.jpg" class="img-responsive" alt="2">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -222,7 +222,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/csc/6.jpg" class="portfolio-box" data-lightbox="image-6" data-title="Your caption">
+                    <a href="img/portfolio/csc/6.jpg" class="portfolio-box" data-lightbox="image-6">
                         <img src="img/portfolio/csc/6.jpg" class="img-responsive" alt="6">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -444,7 +444,7 @@
             <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay=".3s">
                 <form id="form-contact-info">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Name" name="Name" placeholder="稱呼，例如OOO先生/小姐">
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="Email" name="Email" placeholder="Email或電話">
@@ -524,6 +524,10 @@
 
     <script>
         $(document).ready(function () {
+
+            lightbox.option({
+                'fitImagesInViewport': false
+            });
 
             /* -- 分享按鈕 -- */
             $('.shareMenu').socialShare({
