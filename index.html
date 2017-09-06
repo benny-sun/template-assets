@@ -37,6 +37,40 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .building,
+        .black-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 20;
+
+        }
+        .black-cover {
+            background: #000;
+            opacity: .5;
+        }
+        .building img {
+            width: 30%;
+            padding-top: 5%;
+        }
+        .building h2, .building h3 {
+            color: #fff;
+            margin: 0;
+        }
+        .building h2 {
+            margin: 40px;
+            cursor: pointer;
+        }
+        .building a {
+            text-decoration: none
+        }
+
+
+    </style>
+
 </head>
 
 <body>
@@ -525,9 +559,13 @@
     <script>
         $(document).ready(function () {
 
-            lightbox.option({
-                'fitImagesInViewport': false
-            });
+            $(".lb-container").append(
+                "<div class='black-cover'></div>" +
+                "<div class='building'>" +
+                "<img src='img/portfolio/building.png'>" +
+                "<h3>建構中</h3>" +
+                "<a href='download/products20170710.pdf' download='download/products20170710.pdf'><h2>型錄下載</h2></a></div>"
+            );
 
             /* -- 分享按鈕 -- */
             $('.shareMenu').socialShare({
