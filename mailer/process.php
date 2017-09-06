@@ -11,11 +11,13 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 
+// 接收表單內容
 $name = $_POST['Name'];
 $email = $_POST['Email'];
 $career = $_POST['Career'];
-$msg = $_POST['message'];
-$err_keys = ['name'];
+$msg = nl2br($_POST['message']);    //nl2br支援換行符號
+
+// 表單正確錯誤旗標
 $isError = false;
 $error_msg = [
     'name' => '',
@@ -25,11 +27,11 @@ $error_msg = [
 ];
 
 if ($name == '') {
-    $error_msg['name'] = '請輸入您的稱呼';
+    $error_msg['name'] = '請填入您的稱呼，例如OOO先生/小姐';
 }
 
 if ($email == '') {
-    $error_msg['email'] = '請輸入聯絡方式，Email或電話';
+    $error_msg['email'] = '請填入您的聯絡方式，Email或電話';
 }
 
 if ($career == '') {
@@ -37,7 +39,7 @@ if ($career == '') {
 }
 
 if ($msg == '') {
-    $error_msg['msg'] = '請輸入內容';
+    $error_msg['msg'] = '請填入訊息內容';
 }
 
 foreach ($error_msg as $value) {
@@ -46,16 +48,11 @@ foreach ($error_msg as $value) {
     }
 }
 
+// 拋回錯誤訊息
 if ($isError) {
     echo json_encode($error_msg);
     die();
-} else {
-    echo 'no error';
 }
-
-sleep(2);
-
-die(); //---------
 
 $mail = new PHPMailer(true);
 try {
@@ -64,27 +61,23 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'jp1.fcomet.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'haogood@lirii.net';                 // SMTP username
-    $mail->Password = 'benny_sun1994';                           // SMTP password
+    $mail->Username = 'mailer@concepoint.com';                 // SMTP username
+    $mail->Password = 'E25010238';                           // SMTP password
     $mail->SMTPSecure = '';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 25;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('haogood@lirii.net', 'Mailer');
-    $mail->addAddress('ben831001@gmail.com', 'Eddie');     // Add a recipient
-    $mail->addAddress('u0224083@mis.nkfust.edu.tw', 'Support');               // Name is optional
-//    $mail->addReplyTo('info@example.com', 'Information');
-//    $mail->addCC('cc@example.com');
-//    $mail->addBCC('bcc@example.com');
-
-    //Attachments
-//    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    $mail->setFrom('mailer@concepoint.com', 'Concepoint Mailer');
+    $mail->addAddress('eddie.sun@concepoint.com', 'Eddie Sun');     // Add a recipient
+    $mail->addAddress('angela.wang@concepoint.com', 'Angela Wang');               // Name is optional
+    $mail->addAddress('support@concepoint.com', 'Support');
+    $mail->addAddress('ben831001@gmail.com');
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->CharSet = 'UTF-8';
     mb_internal_encoding('UTF-8');
-    $mail->Subject = mb_encode_mimeheader('康碁官網 客戶'.$name.'來信', 'UTF-8');
+    $mail->Subject = '康碁官網 客戶:'.$name.' 來信';
     $mail->Body    = '客戶職業：<b>'.$career.'</b><br>'.
         '聯絡方式：'.$email.'<br>'.
         '訊息內容：<p>'.$msg.'</p>';

@@ -877,6 +877,7 @@ Contact Us Style
 }
 
 #contact .address,
+#contact .mail,
 #contact .tel,
 #contact .fax {
     font-size: 22px;
@@ -886,6 +887,14 @@ Contact Us Style
 
 #contact .en {
     font-size: 16px;
+}
+
+#contact .mail:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    content: "\f0e0";
+    font-size: 18px;
 }
 
 #contact .tel:before {
