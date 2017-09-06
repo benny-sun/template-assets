@@ -933,6 +933,24 @@ Contact Us Style
     font-size: 45px;
 }
 
+#contact .error-msg {
+    float:left;
+    padding-left: 10px;
+    color: red;
+    font-size: 20px;
+}
+
+#contact .error-border {
+    border: 2px solid #FF0000 !important;
+}
+
+/* ==========================================================================
+SweetAlert2 Style
+========================================================================== */
+.swal2-modal {
+    font-family: 'Open Sans', 'Microsoft JhengHei','Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 /* ==========================================================================
 Google Map Style
 ========================================================================== */

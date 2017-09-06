@@ -37,23 +37,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        .error-msg {
-            float:left;
-            padding-left: 10px;
-            color: red;
-            font-size: 20px;
-        }
-
-        .error-border {
-            border: 2px solid #FF0000 !important;
-        }
-
-        .swal2-modal {
-            font-family: 'Open Sans', 'Microsoft JhengHei','Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -570,12 +553,14 @@
                 $('.page-scroll').attr('data-toggle', 'collapse').attr('data-target', '.navbar-collapse');
             }
 
+            // Form submit button click
             document.getElementById("btn-send-mail").addEventListener("click", function() {
                 $.ajax({
                     url: "mailer/process.php",
                     data: $("#form-contact-info").serialize(),
                     method: "POST",
                     beforeSend: function () {
+                        // Set submit button to loading status
                         $("#btn-send-mail")
                             .addClass("disabled")
                             .prop("disabled",true)
@@ -591,8 +576,7 @@
                                 $("#Name").addClass("error-border");
                                 $("<span class='error-msg'>"+error.name+"</span>").insertAfter( $("#Name") );
                             } else if (error.name === '') {
-                                $("#Name").removeClass("error-border");
-                                $("#Name").next().remove();
+                                $("#Name").removeClass("error-border").next().remove();
                             }
 
                             //Contact validating - Email or Phone number
@@ -600,8 +584,7 @@
                                 $("#Email").addClass("error-border");
                                 $("<span class='error-msg'>"+error.email+"</span>").insertAfter( $("#Email") );
                             } else if (error.email === '') {
-                                $("#Email").removeClass("error-border");
-                                $("#Email").next().remove();
+                                $("#Email").removeClass("error-border").next().remove();
                             }
 
                             //Career validating
@@ -609,8 +592,7 @@
                                 $("#Career").addClass("error-border");
                                 $("<span class='error-msg'>"+error.career+"</span>").insertAfter( $("#Career").next() );
                             } else if (error.career === '') {
-                                $("#Career").removeClass("error-border");
-                                $("#Career").next().next().remove();
+                                $("#Career").removeClass("error-border").next().next().remove();
                             }
 
                             //Message validating - Email or Phone number
@@ -618,16 +600,15 @@
                                 $("#message").addClass("error-border");
                                 $("<span class='error-msg'>"+error.msg+"</span>").insertAfter( $("#message") );
                             } else if (error.msg === '') {
-                                $("#message").removeClass("error-border");
-                                $("#message").next().remove();
+                                $("#message").removeClass("error-border").next().remove();
                             }
 
-                            $("#btn-send-mail")
-                                .removeClass("disabled")
-                                .prop("disabled",false)
-                                .find("i")
-                                .addClass("hidden");
                         } else {
+                            //Remove all error message
+                            $("#Name,#Email,#message").removeClass("error-border").next().remove();
+                            $("#Career").removeClass("error-border").next().next().remove();
+
+                            //popup success message and reload page
                             swal(
                                 '太棒了!',
                                 '敝公司已收到您的反饋並盡快與您聯絡',
@@ -636,6 +617,13 @@
                                 location.reload();
                             });
                         }
+
+                        //Set submit button from loading status to default
+                        $("#btn-send-mail")
+                            .removeClass("disabled")
+                            .prop("disabled",false)
+                            .find("i")
+                            .addClass("hidden");
                     },
                     error: function (xhr, ajaxOption, error) {
                         console.log(xhr, ajaxOption, error);
