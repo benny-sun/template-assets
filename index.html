@@ -564,8 +564,13 @@
                 "<div class='building'>" +
                 "<img src='img/portfolio/building.png'>" +
                 "<h3>建構中</h3>" +
-                "<a href='download/products20170710.pdf' download='download/products20170710.pdf'><h2>型錄下載</h2></a></div>"
+                "<a id='download-link' download='產品型錄'><h2>型錄下載</h2></a></div>"
             );
+
+            $("#download-link").click(function () {
+                location.href = "downloader/process.php";
+            });
+
 
             /* -- 分享按鈕 -- */
             $('.shareMenu').socialShare({
